@@ -165,6 +165,8 @@ typedef NS_ENUM(NSUInteger, KeyboardTrackingScrollBehavior) {
             if (textView != nil)
             {
                 [textView setInputAccessoryView:_observingInputAccessoryView];
+                textView.inputAssistantItem.leadingBarButtonGroups = @[];
+                textView.inputAssistantItem.trailingBarButtonGroups = @[];
                 [textView reloadInputViews];
                 
                 [_inputViewsMap setObject:textView forKey:@(kInputViewKey)];
